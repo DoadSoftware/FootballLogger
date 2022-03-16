@@ -224,6 +224,8 @@ public class IndexController
 					throws IOException, IllegalAccessException, InvocationTargetException, JAXBException
 	{	
 		switch (whatToProcess.toUpperCase()) {
+		case "POPULATE_AND_LOAD_LOGGER":
+			return JSONObject.fromObject(session_match).toString();
 		case FootballUtil.LOAD_MATCH: case FootballUtil.LOAD_SETUP:
 
 			session_match = (Match) JAXBContext.newInstance(Match.class).createUnmarshaller().unmarshal(

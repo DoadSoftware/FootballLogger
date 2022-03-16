@@ -29,7 +29,7 @@ function reloadPage(whichPage)
 		processUserSelection($('#select_broadcaster'));
 		break;
 	case 'logger':
-		addItemsToList('LOAD_LOGGER',null);
+		processFootballProcedures('POPULATE_AND_LOAD_LOGGER');
 		break;
 	}
 }
@@ -234,6 +234,9 @@ function processFootballProcedures(whatToProcess)
         dataType : 'json',
         success : function(data) {
         	switch(whatToProcess) {
+			case 'POPULATE_AND_LOAD_LOGGER':
+				addItemsToList('LOAD_LOGGER',data)
+				break;
         	case 'LOAD_SETUP':
         		initialiseForm('SETUP',data);
         		break;
@@ -343,7 +346,21 @@ function addItemsToList(whatToProcess, dataToProcess)
 								}
 						    	break;
 						    }
-						    option.value = '0';
+							dataToProcess.stats.forEach(function(item) {
+							    if(option.name.toUpperCase().includes(item.statType)) {
+									switch(j) {
+									case 0:
+									    option.value = item.homeStatCount;
+										break;
+									case 2:
+									    option.value = item.awayStatCount;
+										break;
+									}
+								}
+							});			
+							if(!option.value) {
+							    option.value = '0';
+							}			    
 						    option.style = 'width:25%';
 							break;
 						case 2:
