@@ -148,10 +148,16 @@ function processUserSelection(whichInput)
 		} else if(whichInput.id.includes('away')) {
 			cont_name = 'away';
 		}
-		if(whichInput.id.includes('yellow_cards')) {
+		if(whichInput.id.includes('goals')) {
+			cont_name = cont_name + '_goal';
+		} else if(whichInput.id.includes('yellow_cards')) {
 			cont_name = cont_name + '_yellow_card';
 		} else if(whichInput.id.includes('red_cards')) {
 			cont_name = cont_name + '_red_card';
+		}else if(whichInput.id.includes('assests')) {
+			cont_name = cont_name + '_assest';
+		}else if(whichInput.id.includes('corners')) {
+			cont_name = cont_name + '_corner';
 		}
 		if(whichInput.id.includes('increment')) {
 			$('#' + cont_name).val(parseInt($('#' + cont_name).val()) + 1);
@@ -277,6 +283,7 @@ function addItemsToList(whatToProcess, dataToProcess)
 			    text = document.createTextNode($('#away_short_team_name').val() + ' Total'); 
 				break;
 			}
+			th.style='color:#008cff';
 		    th.appendChild(text);
 		    tr.appendChild(th);
 		}
@@ -286,7 +293,7 @@ function addItemsToList(whatToProcess, dataToProcess)
 		table.appendChild(thead);
 
 		tbody = document.createElement('tbody');
-		for(var i=0; i<=1; i++) {
+		for(var i=0; i<=4; i++) {
 			row = tbody.insertRow(tbody.rows.length);
 			for(var j=0; j<=2; j++) {
 			    div = document.createElement('div');
@@ -301,6 +308,16 @@ function addItemsToList(whatToProcess, dataToProcess)
 							case 0:
 								switch(j) {
 								case 0:
+							    	option.name = 'home_increment_goals_btn';
+									break;
+								case 2:
+							    	option.name = 'away_increment_goals_btn';
+									break;
+								}
+						    	break;
+							case 1:
+								switch(j) {
+								case 0:
 							    	option.name = 'home_increment_yellow_cards_btn';
 									break;
 								case 2:
@@ -308,13 +325,33 @@ function addItemsToList(whatToProcess, dataToProcess)
 									break;
 								}
 						    	break;
-							case 1:
+						    case 2:
 								switch(j) {
 								case 0:
 							    	option.name = 'home_increment_red_cards_btn';
 									break;
 								case 2:
 							    	option.name = 'away_increment_red_cards_btn';
+									break;
+								}
+						    	break;
+						    case 3:
+								switch(j) {
+								case 0:
+							    	option.name = 'home_increment_assests_btn';
+									break;
+								case 2:
+							    	option.name = 'away_increment_assests_btn';
+									break;
+								}
+						    	break;
+						    case 4:
+								switch(j) {
+								case 0:
+							    	option.name = 'home_increment_corners_btn';
+									break;
+								case 2:
+							    	option.name = 'away_increment_corners_btn';
 									break;
 								}
 						    	break;
@@ -328,6 +365,16 @@ function addItemsToList(whatToProcess, dataToProcess)
 							case 0:
 								switch(j) {
 								case 0:
+								    option.name = 'home_goal';
+									break;
+								case 2:
+								    option.name = 'away_goal';
+									break;
+								}
+						    	break;
+							case 1:
+								switch(j) {
+								case 0:
 								    option.name = 'home_yellow_card';
 									break;
 								case 2:
@@ -335,13 +382,33 @@ function addItemsToList(whatToProcess, dataToProcess)
 									break;
 								}
 						    	break;
-							case 1:
+						    case 2:
 								switch(j) {
 								case 0:
 								    option.name = 'home_red_card';
 									break;
 								case 2:
 								    option.name = 'away_red_card';
+									break;
+								}
+						    	break;
+						    case 3:
+								switch(j) {
+								case 0:
+								    option.name = 'home_assest';
+									break;
+								case 2:
+								    option.name = 'away_assest';
+									break;
+								}
+						    	break;
+						    case 4:
+								switch(j) {
+								case 0:
+								    option.name = 'home_corner';
+									break;
+								case 2:
+								    option.name = 'away_corner';
 									break;
 								}
 						    	break;
@@ -362,11 +429,22 @@ function addItemsToList(whatToProcess, dataToProcess)
 							    option.value = '0';
 							}			    
 						    option.style = 'width:25%';
+							//option.style = 'color:#008cff';
 							break;
 						case 2:
 						    option.type = 'button';
 							switch(i) {
 							case 0:
+								switch(j) {
+								case 0:
+								    option.name = 'home_decrement_goals_btn';
+									break;
+								case 2:
+								    option.name = 'away_decrement_goals_btn';
+									break;
+								}
+						    	break;
+							case 1:
 								switch(j) {
 								case 0:
 								    option.name = 'home_decrement_yellow_cards_btn';
@@ -376,13 +454,33 @@ function addItemsToList(whatToProcess, dataToProcess)
 									break;
 								}
 						    	break;
-							case 1:
+						    case 2:
 								switch(j) {
 								case 0:
 								    option.name = 'home_decrement_red_cards_btn';
 									break;
 								case 2:
 								    option.name = 'away_decrement_red_cards_btn';
+									break;
+								}
+						    	break;
+						    case 3:
+								switch(j) {
+								case 0:
+								    option.name = 'home_decrement_assests_btn';
+									break;
+								case 2:
+								    option.name = 'away_decrement_assests_btn';
+									break;
+								}
+						    	break;
+						    case 4:
+								switch(j) {
+								case 0:
+								    option.name = 'home_decrement_corners_btn';
+									break;
+								case 2:
+								    option.name = 'away_decrement_corners_btn';
 									break;
 								}
 						    	break;
@@ -399,10 +497,19 @@ function addItemsToList(whatToProcess, dataToProcess)
 				    option = document.createElement('label');
 					switch(i) {
 					case 0:
-					    option.innerHTML = 'Yellow Cards'
+					    option.innerHTML = 'Goals'
 					    break;
 					case 1:
+					    option.innerHTML = 'Yellow Cards'
+					    break;
+					case 2:
 					    option.innerHTML = 'Red Cards'
+					    break;
+					case 3:
+					    option.innerHTML = 'Assests'
+					    break;
+					case 4:
+					    option.innerHTML = 'Corners'
 					    break;
 					}
 				    option.id = option.name;

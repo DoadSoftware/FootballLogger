@@ -189,10 +189,19 @@ public class IndexController
 			for(int i=1; i <= FootballUtil.MAXIMUM_LOGGER_STATS; i++) {
 				switch (i) {
 				case 1:
-					this_stats.add(new Stats(i, FootballUtil.YELLOW_CARD));
+					this_stats.add(new Stats(i, FootballUtil.GOAL));
 					break;
 				case 2:
+					this_stats.add(new Stats(i, FootballUtil.YELLOW_CARD));
+					break;
+				case 3:
 					this_stats.add(new Stats(i, FootballUtil.RED_CARD));
+					break;
+				case 4:
+					this_stats.add(new Stats(i, FootballUtil.ASSEST));
+					break;
+				case 5:
+					this_stats.add(new Stats(i, FootballUtil.CORNER));
 					break;
 				}
 			}
