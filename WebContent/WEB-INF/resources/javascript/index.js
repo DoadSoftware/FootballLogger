@@ -154,10 +154,16 @@ function processUserSelection(whichInput)
 			cont_name = cont_name + '_yellow_card';
 		} else if(whichInput.id.includes('red_cards')) {
 			cont_name = cont_name + '_red_card';
-		}else if(whichInput.id.includes('assests')) {
-			cont_name = cont_name + '_assest';
+		}else if(whichInput.id.includes('assists')) {
+			cont_name = cont_name + '_assist';
 		}else if(whichInput.id.includes('corners')) {
 			cont_name = cont_name + '_corner';
+		}else if(whichInput.id.includes('offsides')) {
+			cont_name = cont_name + '_offside';
+		}else if(whichInput.id.includes('shots')) {
+			cont_name = cont_name + '_shot';
+		}else if(whichInput.id.includes('posessions')) {
+			cont_name = cont_name + '_posession';
 		}
 		if(whichInput.id.includes('increment')) {
 			$('#' + cont_name).val(parseInt($('#' + cont_name).val()) + 1);
@@ -293,7 +299,7 @@ function addItemsToList(whatToProcess, dataToProcess)
 		table.appendChild(thead);
 
 		tbody = document.createElement('tbody');
-		for(var i=0; i<=4; i++) {
+		for(var i=0; i<=7; i++) {
 			row = tbody.insertRow(tbody.rows.length);
 			for(var j=0; j<=2; j++) {
 			    div = document.createElement('div');
@@ -338,10 +344,10 @@ function addItemsToList(whatToProcess, dataToProcess)
 						    case 3:
 								switch(j) {
 								case 0:
-							    	option.name = 'home_increment_assests_btn';
+							    	option.name = 'home_increment_assists_btn';
 									break;
 								case 2:
-							    	option.name = 'away_increment_assests_btn';
+							    	option.name = 'away_increment_assists_btn';
 									break;
 								}
 						    	break;
@@ -352,6 +358,36 @@ function addItemsToList(whatToProcess, dataToProcess)
 									break;
 								case 2:
 							    	option.name = 'away_increment_corners_btn';
+									break;
+								}
+						    	break;
+						    case 5:
+								switch(j) {
+								case 0:
+							    	option.name = 'home_increment_offsides_btn';
+									break;
+								case 2:
+							    	option.name = 'away_increment_offsides_btn';
+									break;
+								}
+						    	break;
+						    case 6:
+								switch(j) {
+								case 0:
+							    	option.name = 'home_increment_shots_btn';
+									break;
+								case 2:
+							    	option.name = 'away_increment_shotss_btn';
+									break;
+								}
+						    	break;
+						    case 7:
+								switch(j) {
+								case 0:
+							    	option.name = 'home_increment_posessions_btn';
+									break;
+								case 2:
+							    	option.name = 'away_increment_posessions_btn';
 									break;
 								}
 						    	break;
@@ -395,10 +431,10 @@ function addItemsToList(whatToProcess, dataToProcess)
 						    case 3:
 								switch(j) {
 								case 0:
-								    option.name = 'home_assest';
+								    option.name = 'home_assist';
 									break;
 								case 2:
-								    option.name = 'away_assest';
+								    option.name = 'away_assist';
 									break;
 								}
 						    	break;
@@ -409,6 +445,36 @@ function addItemsToList(whatToProcess, dataToProcess)
 									break;
 								case 2:
 								    option.name = 'away_corner';
+									break;
+								}
+						    	break;
+						    case 5:
+								switch(j) {
+								case 0:
+								    option.name = 'home_offside';
+									break;
+								case 2:
+								    option.name = 'away_offside';
+									break;
+								}
+						    	break;
+						    case 6:
+								switch(j) {
+								case 0:
+								    option.name = 'home_shot';
+									break;
+								case 2:
+								    option.name = 'away_shot';
+									break;
+								}
+						    	break;
+						    case 7:
+								switch(j) {
+								case 0:
+								    option.name = 'home_posession';
+									break;
+								case 2:
+								    option.name = 'away_posession';
 									break;
 								}
 						    	break;
@@ -467,10 +533,10 @@ function addItemsToList(whatToProcess, dataToProcess)
 						    case 3:
 								switch(j) {
 								case 0:
-								    option.name = 'home_decrement_assests_btn';
+								    option.name = 'home_decrement_assists_btn';
 									break;
 								case 2:
-								    option.name = 'away_decrement_assests_btn';
+								    option.name = 'away_decrement_assists_btn';
 									break;
 								}
 						    	break;
@@ -481,6 +547,36 @@ function addItemsToList(whatToProcess, dataToProcess)
 									break;
 								case 2:
 								    option.name = 'away_decrement_corners_btn';
+									break;
+								}
+						    	break;
+						    case 5:
+								switch(j) {
+								case 0:
+								    option.name = 'home_decrement_offsides_btn';
+									break;
+								case 2:
+								    option.name = 'away_decrement_offsides_btn';
+									break;
+								}
+						    	break;
+						    case 6:
+								switch(j) {
+								case 0:
+								    option.name = 'home_decrement_shots_btn';
+									break;
+								case 2:
+								    option.name = 'away_decrement_shots_btn';
+									break;
+								}
+						    	break;
+						    case 7:
+								switch(j) {
+								case 0:
+								    option.name = 'home_decrement_posessions_btn';
+									break;
+								case 2:
+								    option.name = 'away_decrement_posessions_btn';
 									break;
 								}
 						    	break;
@@ -506,10 +602,19 @@ function addItemsToList(whatToProcess, dataToProcess)
 					    option.innerHTML = 'Red Cards'
 					    break;
 					case 3:
-					    option.innerHTML = 'Assests'
+					    option.innerHTML = 'Assists'
 					    break;
 					case 4:
 					    option.innerHTML = 'Corners'
+					    break;
+					case 5:
+					    option.innerHTML = 'Offsides'
+					    break;
+					case 6:
+					    option.innerHTML = 'Shots'
+					    break;
+					case 7:
+					    option.innerHTML = 'Posessions'
 					    break;
 					}
 				    option.id = option.name;

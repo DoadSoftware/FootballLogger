@@ -8,8 +8,100 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="event")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Event {
+	
+	@XmlElement(name = "eventGoal")
+	private String eventGoal;
+	  
+	@XmlElement(name = "eventYellowCard")
+	private String eventYellowCard;
 
-  @XmlElement(name = "eventNumber")
+	@XmlElement(name = "eventRedCard")
+	private String eventRedCard;
+	  
+	@XmlElement(name = "eventAssist")
+	private String eventAssist;
+
+	@XmlElement(name = "eventCorner")
+	private String eventCorner;
+	
+	@XmlElement(name = "eventShot")
+	private String eventShot;
+	
+	@XmlElement(name = "eventOffside")
+	private String eventOffside;
+	  
+	@XmlElement(name = "eventPosession")
+	private String eventPosession;
+
+	public String getEventGoal() {
+		return eventGoal;
+	}
+
+	public void setEventGoal(String eventGoal) {
+		this.eventGoal = eventGoal;
+	}
+
+	public String getEventYellowCard() {
+		return eventYellowCard;
+	}
+
+	public void setEventYellowCard(String eventYellowCard) {
+		this.eventYellowCard = eventYellowCard;
+	}
+
+	public String getEventRedCard() {
+		return eventRedCard;
+	}
+
+	public void setEventRedCard(String eventRedCard) {
+		this.eventRedCard = eventRedCard;
+	}
+
+	public String getEventAssist() {
+		return eventAssist;
+	}
+
+	public void setEventAssist(String eventAssist) {
+		this.eventAssist = eventAssist;
+	}
+
+	public String getEventCorner() {
+		return eventCorner;
+	}
+
+	public void setEventCorner(String eventCorner) {
+		this.eventCorner = eventCorner;
+	}
+
+	public String getEventShot() {
+		return eventShot;
+	}
+
+	public void setEventShot(String eventShot) {
+		this.eventShot = eventShot;
+	}
+
+	public String getEventOffside() {
+		return eventOffside;
+	}
+
+	public void setEventOffside(String eventOffside) {
+		this.eventOffside = eventOffside;
+	}
+
+	public String getEventPosession() {
+		return eventPosession;
+	}
+
+	public void setEventPosession(String eventPosession) {
+		this.eventPosession = eventPosession;
+	}
+
+	
+	
+	
+	
+ /* @XmlElement(name = "eventNumber")
   private int eventNumber;
 
   @XmlElement(name = "eventWasABoundary")
@@ -248,7 +340,7 @@ public String getEventType() {
 }
 
 public void setEventType(String eventType) {
-	this.eventType = eventType;
-}
+	this.eventType = eventType;*/
+
 
 }

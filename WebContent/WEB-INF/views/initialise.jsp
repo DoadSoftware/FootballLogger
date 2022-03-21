@@ -51,6 +51,14 @@
 			          <option value="doad">DOAD In House</option>
 			      </select>
 			    </div>
+			    <div class="form-group row row-bottom-margin ml-2" style="margin-bottom:5px;">
+			    <label for="select_sponsors" class="col-sm-4 col-form-label text-left">Select Sponsors </label>
+			    <div class="col-sm-6 col-md-6">
+			      <select id="select_sponsors" name="select_sponsors" class="browser-default custom-select custom-select-sm"
+			      		onchange="processUserSelection(this)">
+			          <option value="doad">Airtel</option>
+			      </select>
+			    </div>
 			  </div>
 		    <button style="background-color:#2E008B;color:#FEFEFE;" class="btn btn-sm" type="submit"
 		  		name="load_match_btn" id="load_match_btn" >

@@ -198,10 +198,19 @@ public class IndexController
 					this_stats.add(new Stats(i, FootballUtil.RED_CARD));
 					break;
 				case 4:
-					this_stats.add(new Stats(i, FootballUtil.ASSEST));
+					this_stats.add(new Stats(i, FootballUtil.ASSIST));
 					break;
 				case 5:
 					this_stats.add(new Stats(i, FootballUtil.CORNER));
+					break;
+				case 6:
+					this_stats.add(new Stats(i, FootballUtil.OFFSIDE));
+					break;
+				case 7:
+					this_stats.add(new Stats(i, FootballUtil.SHOTS));
+					break;
+				case 8:
+					this_stats.add(new Stats(i, FootballUtil.POSESSION));
 					break;
 				}
 			}

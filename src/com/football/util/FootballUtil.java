@@ -23,11 +23,14 @@ public class FootballUtil {
 	public final static String GOAL = "GOAL";
 	public final static String YELLOW_CARD = "YELLOW_CARD";
 	public final static String RED_CARD = "RED_CARD";
-	public final static String ASSEST = "ASSEST";
+	public final static String ASSIST = "ASSIST";
 	public final static String CORNER = "CORNER";
+	public final static String OFFSIDE = "OFFSIDE";
+	public final static String SHOTS = "SHOTS";
+	public final static String POSESSION = "POSESSION";
 	
 	public final static int MAXIMUM_PLAYERS = 11;
-	public final static int MAXIMUM_LOGGER_STATS = 4;
+	public final static int MAXIMUM_LOGGER_STATS = 8;
 	public final static String DOAD = "DOAD";
 	
 }
