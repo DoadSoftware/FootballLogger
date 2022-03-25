@@ -212,6 +212,12 @@ public class IndexController
 				case 8:
 					this_stats.add(new Stats(i, FootballUtil.POSESSION));
 					break;
+				case 9:
+					this_stats.add(new Stats(i, FootballUtil.ATTACK));
+					break;
+				case 10:
+					this_stats.add(new Stats(i, FootballUtil.FOUL));
+					break;
 				}
 			}
 			for (Entry<String, String[]> entry : request.getParameterMap().entrySet()) {

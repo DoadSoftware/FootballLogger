@@ -32,6 +32,12 @@ public class Event {
 	  
 	@XmlElement(name = "eventPosession")
 	private String eventPosession;
+	
+	@XmlElement(name = "eventAttack")
+	private String eventAttack;
+	
+	@XmlElement(name = "eventFoul")
+	private String eventFoul;
 
 	public String getEventGoal() {
 		return eventGoal;
@@ -96,6 +102,44 @@ public class Event {
 	public void setEventPosession(String eventPosession) {
 		this.eventPosession = eventPosession;
 	}
+
+	public String getEventAttack() {
+		return eventAttack;
+	}
+
+	public void setEventAttack(String eventAttack) {
+		this.eventAttack = eventAttack;
+	}
+
+	public String getEventFoul() {
+		return eventFoul;
+	}
+
+	public void setEventFoul(String eventFoul) {
+		this.eventFoul = eventFoul;
+	}
+
+	public Event() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Event(String eventGoal, String eventYellowCard, String eventRedCard, String eventAssist, String eventCorner,
+			String eventShot, String eventOffside, String eventPosession, String eventAttack, String eventFoul) {
+		super();
+		this.eventGoal = eventGoal;
+		this.eventYellowCard = eventYellowCard;
+		this.eventRedCard = eventRedCard;
+		this.eventAssist = eventAssist;
+		this.eventCorner = eventCorner;
+		this.eventShot = eventShot;
+		this.eventOffside = eventOffside;
+		this.eventPosession = eventPosession;
+		this.eventAttack = eventAttack;
+		this.eventFoul = eventFoul;
+	}
+	
+	
 
 	
 	

@@ -3,15 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>FootballLogger</groupId>
   <artifactId>FootballLogger</artifactId>
-<<<<<<< Updated upstream
-  <version>1.0.b3</version>
-=======
-<<<<<<< HEAD
   <version>1.0.b4</version>
-=======
-  <version>1.0.b3</version>
->>>>>>> c0d053f689dfd6b679f219f141e9c57e0e0402c1
->>>>>>> Stashed changes
   <packaging>war</packaging>
   <name>FootballLogger</name>
   <properties>

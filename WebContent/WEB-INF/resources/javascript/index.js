@@ -142,28 +142,32 @@ function processUserSelection(whichInput)
 		}
 		break;
 	default:
-		var cont_name = ''
+		var cont_name = '';
 		if(whichInput.id.includes('home')) {
 			cont_name = 'home';
 		} else if(whichInput.id.includes('away')) {
 			cont_name = 'away';
 		}
 		if(whichInput.id.includes('goals')) {
-			cont_name = cont_name + '_goal';
+			cont_name = cont_name + '_goals';
 		} else if(whichInput.id.includes('yellow_cards')) {
-			cont_name = cont_name + '_yellow_card';
+			cont_name = cont_name + '_yellow_cards';
 		} else if(whichInput.id.includes('red_cards')) {
-			cont_name = cont_name + '_red_card';
+			cont_name = cont_name + '_red_cards';
 		}else if(whichInput.id.includes('assists')) {
-			cont_name = cont_name + '_assist';
+			cont_name = cont_name + '_assists';
 		}else if(whichInput.id.includes('corners')) {
-			cont_name = cont_name + '_corner';
+			cont_name = cont_name + '_corners';
 		}else if(whichInput.id.includes('offsides')) {
-			cont_name = cont_name + '_offside';
+			cont_name = cont_name + '_offsides';
 		}else if(whichInput.id.includes('shots')) {
-			cont_name = cont_name + '_shot';
+			cont_name = cont_name + '_shots';
 		}else if(whichInput.id.includes('posessions')) {
-			cont_name = cont_name + '_posession';
+			cont_name = cont_name + '_posessions';
+		}else if(whichInput.id.includes('attacks')) {
+			cont_name = cont_name + '_attacks';
+		}else if(whichInput.id.includes('fouls')) {
+			cont_name = cont_name + '_fouls';
 		}
 		if(whichInput.id.includes('increment')) {
 			$('#' + cont_name).val(parseInt($('#' + cont_name).val()) + 1);
@@ -263,8 +267,7 @@ function processFootballProcedures(whatToProcess)
 	    }    
 	});
 }
-function addItemsToList(whatToProcess, dataToProcess)
-{
+function addItemsToList(whatToProcess, dataToProcess){
 	var select,option,table,tbody,row,div;
 	
 	switch (whatToProcess) {
@@ -293,338 +296,140 @@ function addItemsToList(whatToProcess, dataToProcess)
 		    th.appendChild(text);
 		    tr.appendChild(th);
 		}
-		
 		thead = document.createElement('thead');
 		thead.appendChild(tr);
 		table.appendChild(thead);
 
 		tbody = document.createElement('tbody');
-		for(var i=0; i<=7; i++) {
-			row = tbody.insertRow(tbody.rows.length);
-			for(var j=0; j<=2; j++) {
-			    div = document.createElement('div');
-				switch(j) {
-				case 0: case 2:
-					for(var k=0; k<=2; k++) {
-					    option = document.createElement('input');
-						switch(k) {
-						case 0:
-						    option.type = 'button';
-							switch(i) {
-							case 0:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_goals_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_goals_btn';
-									break;
-								}
-						    	break;
-							case 1:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_yellow_cards_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_yellow_cards_btn';
-									break;
-								}
-						    	break;
-						    case 2:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_red_cards_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_red_cards_btn';
-									break;
-								}
-						    	break;
-						    case 3:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_assists_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_assists_btn';
-									break;
-								}
-						    	break;
-						    case 4:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_corners_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_corners_btn';
-									break;
-								}
-						    	break;
-						    case 5:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_offsides_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_offsides_btn';
-									break;
-								}
-						    	break;
-						    case 6:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_shots_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_shotss_btn';
-									break;
-								}
-						    	break;
-						    case 7:
-								switch(j) {
-								case 0:
-							    	option.name = 'home_increment_posessions_btn';
-									break;
-								case 2:
-							    	option.name = 'away_increment_posessions_btn';
-									break;
-								}
-						    	break;
-						    }
-						    option.value = '+';
-						    option.setAttribute('onclick','processUserSelection(this);');
-							break;
-						case 1:
-						    option.type = 'text';
-							switch(i) {
-							case 0:
-								switch(j) {
-								case 0:
-								    option.name = 'home_goal';
-									break;
-								case 2:
-								    option.name = 'away_goal';
-									break;
-								}
-						    	break;
-							case 1:
-								switch(j) {
-								case 0:
-								    option.name = 'home_yellow_card';
-									break;
-								case 2:
-								    option.name = 'away_yellow_card';
-									break;
-								}
-						    	break;
-						    case 2:
-								switch(j) {
-								case 0:
-								    option.name = 'home_red_card';
-									break;
-								case 2:
-								    option.name = 'away_red_card';
-									break;
-								}
-						    	break;
-						    case 3:
-								switch(j) {
-								case 0:
-								    option.name = 'home_assist';
-									break;
-								case 2:
-								    option.name = 'away_assist';
-									break;
-								}
-						    	break;
-						    case 4:
-								switch(j) {
-								case 0:
-								    option.name = 'home_corner';
-									break;
-								case 2:
-								    option.name = 'away_corner';
-									break;
-								}
-						    	break;
-						    case 5:
-								switch(j) {
-								case 0:
-								    option.name = 'home_offside';
-									break;
-								case 2:
-								    option.name = 'away_offside';
-									break;
-								}
-						    	break;
-						    case 6:
-								switch(j) {
-								case 0:
-								    option.name = 'home_shot';
-									break;
-								case 2:
-								    option.name = 'away_shot';
-									break;
-								}
-						    	break;
-						    case 7:
-								switch(j) {
-								case 0:
-								    option.name = 'home_posession';
-									break;
-								case 2:
-								    option.name = 'away_posession';
-									break;
-								}
-						    	break;
-						    }
-							dataToProcess.stats.forEach(function(item) {
-							    if(option.name.toUpperCase().includes(item.statType)) {
-									switch(j) {
-									case 0:
-									    option.value = item.homeStatCount;
-										break;
-									case 2:
-									    option.value = item.awayStatCount;
-										break;
-									}
-								}
-							});			
-							if(!option.value) {
-							    option.value = '0';
-							}			    
-						    option.style = 'width:25%';
-							//option.style = 'color:#008cff';
-							break;
-						case 2:
-						    option.type = 'button';
-							switch(i) {
-							case 0:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_goals_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_goals_btn';
-									break;
-								}
-						    	break;
-							case 1:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_yellow_cards_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_yellow_cards_btn';
-									break;
-								}
-						    	break;
-						    case 2:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_red_cards_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_red_cards_btn';
-									break;
-								}
-						    	break;
-						    case 3:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_assists_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_assists_btn';
-									break;
-								}
-						    	break;
-						    case 4:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_corners_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_corners_btn';
-									break;
-								}
-						    	break;
-						    case 5:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_offsides_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_offsides_btn';
-									break;
-								}
-						    	break;
-						    case 6:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_shots_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_shots_btn';
-									break;
-								}
-						    	break;
-						    case 7:
-								switch(j) {
-								case 0:
-								    option.name = 'home_decrement_posessions_btn';
-									break;
-								case 2:
-								    option.name = 'away_decrement_posessions_btn';
-									break;
-								}
-						    	break;
-						    }
-						    option.value = '-';
-						    option.setAttribute('onclick','processUserSelection(this);');
-							break;
-						}
-					    option.id = option.name;
-					    div.append(option);
-					}
-					break;
-				case 1:
-				    option = document.createElement('label');
-					switch(i) {
-					case 0:
-					    option.innerHTML = 'Goals'
-					    break;
-					case 1:
-					    option.innerHTML = 'Yellow Cards'
-					    break;
-					case 2:
-					    option.innerHTML = 'Red Cards'
-					    break;
-					case 3:
-					    option.innerHTML = 'Assists'
-					    break;
-					case 4:
-					    option.innerHTML = 'Corners'
-					    break;
-					case 5:
-					    option.innerHTML = 'Offsides'
-					    break;
-					case 6:
-					    option.innerHTML = 'Shots'
-					    break;
-					case 7:
-					    option.innerHTML = 'Posessions'
-					    break;
-					}
-				    option.id = option.name;
-				    div.append(option);
-					break;
-				}
-				row.insertCell(j).appendChild(div);
+        var home_or_away = '', stats_type= '';
+        for(var i=0; i<=9; i++) {
+            row = tbody.insertRow(tbody.rows.length);
+    		switch (i) {
+    		case 0:
+        		stats_type = 'goals';
+        		break;
+    		case 1:
+				stats_type = 'yellow_cards';
+				break;
+			case 2:
+				stats_type = 'red_cards';
+				break;
+			case 3:
+				stats_type = 'assists';
+				break;
+			case 4:
+				stats_type = 'corners';
+				break;
+			case 5:
+				stats_type = 'offsides';
+				break;
+			case 6:
+				stats_type = 'shots';
+				break;
+			case 7:
+				stats_type = 'posessions';
+				break;
+			case 8:
+				stats_type = 'attacks';
+				break;
+			case 9:
+				stats_type = 'fouls';
+				break;
 			}
-		}
-		
+    		for(var j=0; j<=2; j++) {
+        		div = document.createElement('div');
+				switch (j) {
+				case 0: case 2:
+	    			switch (j) {
+	    			case 0:
+	        			home_or_away = 'home';
+						break;
+	    			case 2:
+						home_or_away = 'away';
+						break;
+					}
+					for(var k=0; k<=2; k++) {
+	        			option = document.createElement('input');
+						switch (k) 
+						{
+						case 0: case 2:
+		    				option.type = "button";
+		    				if (k == 0) {
+		        				option.id = home_or_away + "_" + 'increment' + "_" + stats_type + '_btn';
+		        				option.value="+";
+		        				option.setAttribute('onclick','processUserSelection(this);');
+		        				}
+		    				else {
+								option.id = home_or_away + "_" + "decrement" + "_" + stats_type + '_btn';
+								option.value="-";
+								option.setAttribute('onclick','processUserSelection(this);');
+								break;
+								}
+								break;
+						case 1:
+		    				option.type = "text";
+		    				option.id = home_or_away + "_" + stats_type;
+		    				option.style = 'width:25%';
+		    				break;
+						}
+					dataToProcess.stats.forEach(function(item) {
+						if(option.name.toUpperCase().includes(item.statType)) {
+							switch(j) {
+							case 0:
+								option.value = item.homeStatCount;
+								break;
+							case 2:
+								option.value = item.awayStatCount;
+								break;
+							}
+						}
+					});			
+						if(!option.value) {
+							option.value = '0';
+						}			
+		div.appendChild(option);
+			    }	
+			    break;
+				case 1:
+					option=document.createElement('label');
+						switch(i){
+						case 0:
+					    	option.innerHTML = 'Goals';
+					    	break;
+						case 1:
+					    	option.innerHTML = 'Yellow Cards';
+					    	break;
+					    case 2:
+					    	option.innerHTML = 'Red Cards';
+					    	break;
+					    case 3:
+					    	option.innerHTML = 'Assists';
+					    	break;
+					    case 4:
+					    	option.innerHTML = 'Corners';
+					    	break;
+					    case 5:
+					    	option.innerHTML = 'Offsides';
+					    	break;
+					    case 6:
+					    	option.innerHTML = 'Shots';
+					    	break;
+					    case 7:
+					    	option.innerHTML = 'Posessions';
+					    	break;
+					    case 8:
+					    	option.innerHTML = 'Attacks';
+					    	break;
+					    case 9:
+					    	option.innerHTML = 'Fouls';
+					    	break;
+						}
+				div.appendChild(option);
+					break;		
+			    }
+			    row.insertCell(j).appendChild(div);
+	     	 }	 
+	    }
 		table.appendChild(tbody);
 		
 		document.getElementById('logging_stats_div').appendChild(table);
@@ -739,10 +544,10 @@ function addItemsToList(whatToProcess, dataToProcess)
 						}
 						switch(j) {
 						case 1: 
-							select.value = dataToProcess.homeSquad[i].captainWicketKeeper;
+							select.value = dataToProcess.homeSquad[i].captainGoalKeeper;
 							break;
 						case 3:
-							select.value = dataToProcess.awaySquad[i].captainWicketKeeper;
+							select.value = dataToProcess.awaySquad[i].captainGoalKeeper;
 							break;
 						}
 						break;

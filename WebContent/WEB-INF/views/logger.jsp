@@ -25,7 +25,12 @@
        <span class="anchor"></span>
          <div class="card card-outline-secondary">
            <div class="card-header">
-             <h3 class="mb-0">Football Logger</h3>
+             <h3 class="mb-0">Football Logger</h3>   
+           </div>
+  			<div class="container">
+         	  <div class="col-md-8 offset-md-0">
+                <h5 class="mb-0">Team Stats</h5>   
+	          </div>
            </div>
            <div class="card-body">
 			  <div id="select_graphic_options_div" style="display:none;">
@@ -38,6 +43,28 @@
     </div>
   </div>
 </div>
+
+
+<div class="container">
+<div class="row">
+	 <div class="col-md-8 offset-md-2">
+       <span class="anchor"></span>
+  			<div class="container">
+         	  <div class="col-md-8 offset-md-0">
+                <h5 class="mb-0">Player Stats</h5>   
+	          </div>
+           </div>
+           
+           <div class="card-body">
+			  <div id="select_graphic_options_div" style="display:none;">
+			  </div>
+			  <div id="logging_stats_divs" class="form-group row row-bottom-margin ml-2" style="margin-bottom:5px;">
+			  </div>
+	       </div>
+	       </div>
+       </div>
+  </div>
+
 <input type="hidden" id='home_short_team_name' value="${session_match.homeTeam.shortname}"/>
 <input type="hidden" id='away_short_team_name' value="${session_match.awayTeam.shortname}"/>
 </form:form>
